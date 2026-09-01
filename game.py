@@ -16,3 +16,16 @@ def ensure_file(filename, headers):
 def read_rows(filename):
     with open(filename, "r", newline="", encoding="utf-8") as f:
          return list(csv.DictReader(f))
+
+
+def append_row(filename, row_dict, headers):
+    with open(filename, "a", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=headers)
+        writer.writerow(row_dict)
+
+
+def next_id(filename, id_field):
+    rows = read_rows(filename)
+    if not rows:
+        return 1
+    return max(int(r[id_field]) for r in rows) + 1
