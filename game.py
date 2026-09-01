@@ -12,3 +12,7 @@ def ensure_file(filename, headers):
         with open(filename, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(headers)
+
+def read_rows(filename):
+    with open(filename, "r", newline="", encoding="utf-8") as f:
+         return list(csv.DictReader(f))
