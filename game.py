@@ -46,3 +46,13 @@ def add_user():
     if not name or not email:
         print("Name and email cannot be empty.\n")
         return
+
+    # Prevent duplicate emails
+    users = read_rows(USERS_FILE)
+    if any(u["email"].lower() == email.lower() for u in users):
+        print("A user with this email already exists.\n")
+        return
+
+    user_id = next_id(USERS_FILE, "user_id")
+    append_row(USERS_FILE, {"user_id": user_id, "name": name, "email": email}, USER_HEADERS)
+    print(f"User '{name}' added with ID {user_id}.\n")
