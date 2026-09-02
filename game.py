@@ -29,3 +29,7 @@ def next_id(filename, id_field):
     if not rows:
         return 1
     return max(int(r[id_field]) for r in rows) + 1
+
+USER_HEADERS = ["user_id", "name", "email"]
+GAME_HEADERS = ["game_id", "name", "genre"]
+REG_HEADERS = ["reg_id", "user_id", "game_id", "timestamp"]
