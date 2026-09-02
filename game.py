@@ -56,3 +56,13 @@ def add_user():
     user_id = next_id(USERS_FILE, "user_id")
     append_row(USERS_FILE, {"user_id": user_id, "name": name, "email": email}, USER_HEADERS)
     print(f"User '{name}' added with ID {user_id}.\n")
+
+def list_users():
+    users = read_rows(USERS_FILE)
+    if not users:
+        print("No users registered yet.\n")
+        return
+    print("\n--- Users ---")
+    for u in users:
+        print(f"ID: {u['user_id']} | Name: {u['name']} | Email: {u['email']}")
+    print()
