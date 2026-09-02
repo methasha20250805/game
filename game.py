@@ -93,3 +93,14 @@ def list_games():
     for g in games:
         print(f"ID: {g['game_id']} | Name: {g['name']} | Genre: {g['genre']}")
     print()
+
+def register_user_to_game():
+    users = read_rows(USERS_FILE)
+    games = read_rows(GAMES_FILE)
+
+    if not users:
+        print("No users exist yet. Add a user first.\n")
+        return
+    if not games:
+        print("No games exist yet. Add a game first.\n")
+        return
