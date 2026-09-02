@@ -74,3 +74,12 @@ def add_game():
     if not name:
         print("Game name cannot be empty.\n")
         return
+
+    games = read_rows(GAMES_FILE)
+    if any(g["name"].lower() == name.lower() for g in games):
+        print("A game with this name already exists.\n")
+        return
+
+    game_id = next_id(GAMES_FILE, "game_id")
+    append_row(GAMES_FILE, {"game_id": game_id, "name": name, "genre": genre}, GAME_HEADERS)
+    print(f"Game '{name}' added with ID {game_id}.\n")
