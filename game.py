@@ -38,3 +38,11 @@ def init_files():
     ensure_file(USERS_FILE, USER_HEADERS)
     ensure_file(GAMES_FILE, GAME_HEADERS)
     ensure_file(REGISTRATIONS_FILE, REG_HEADERS)
+
+def add_user():
+    name = input("Enter user name: ").strip()
+    email = input("Enter user email: ").strip()
+
+    if not name or not email:
+        print("Name and email cannot be empty.\n")
+        return
