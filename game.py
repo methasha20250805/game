@@ -66,3 +66,11 @@ def list_users():
     for u in users:
         print(f"ID: {u['user_id']} | Name: {u['name']} | Email: {u['email']}")
     print()
+
+def add_game():
+    name = input("Enter game name: ").strip()
+    genre = input("Enter game genre: ").strip()
+
+    if not name:
+        print("Game name cannot be empty.\n")
+        return
