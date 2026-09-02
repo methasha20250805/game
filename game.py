@@ -83,3 +83,13 @@ def add_game():
     game_id = next_id(GAMES_FILE, "game_id")
     append_row(GAMES_FILE, {"game_id": game_id, "name": name, "genre": genre}, GAME_HEADERS)
     print(f"Game '{name}' added with ID {game_id}.\n")
+
+def list_games():
+    games = read_rows(GAMES_FILE)
+    if not games:
+        print("No games registered yet.\n")
+        return
+    print("\n--- Games ---")
+    for g in games:
+        print(f"ID: {g['game_id']} | Name: {g['name']} | Genre: {g['genre']}")
+    print()
