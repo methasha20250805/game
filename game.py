@@ -116,3 +116,17 @@ def register_user_to_game():
     if not any(g["game_id"] == game_id for g in games):
         print("Invalid game ID.\n")
         return
+
+    regs = read_rows(REGISTRATIONS_FILE)
+    if any(r["user_id"] == user_id and r["game_id"] == game_id for r in regs):
+        print("This user is already registered for this game.\n")
+        return
+
+    reg_id = next_id(REGISTRATIONS_FILE, "reg_id")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    append_row(
+        REGISTRATIONS_FILE,
+        {"reg_id": reg_id, "user_id": user_id, "game_id": game_id, "timestamp": timestamp},
+        REG_HEADERS,
+    )
+    print(f"Registration successful (Registration ID {reg_id}).\n")
