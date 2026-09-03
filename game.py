@@ -130,3 +130,9 @@ def register_user_to_game():
         REG_HEADERS,
     )
     print(f"Registration successful (Registration ID {reg_id}).\n")
+
+def list_registrations():
+    regs = read_rows(REGISTRATIONS_FILE)
+    if not regs:
+        print("No registrations yet.\n")
+        return
