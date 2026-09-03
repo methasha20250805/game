@@ -182,3 +182,5 @@ def main():
         else:
             print("Invalid choice, please try again.\n")
 
+if __name__ == "__main__":
+    main()
