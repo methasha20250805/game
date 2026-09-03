@@ -104,3 +104,15 @@ def register_user_to_game():
     if not games:
         print("No games exist yet. Add a game first.\n")
         return
+
+    list_users()
+    user_id = input("Enter user ID to register: ").strip()
+    if not any(u["user_id"] == user_id for u in users):
+        print("Invalid user ID.\n")
+        return
+
+    list_games()
+    game_id = input("Enter game ID to register for: ").strip()
+    if not any(g["game_id"] == game_id for g in games):
+        print("Invalid game ID.\n")
+        return
