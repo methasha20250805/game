@@ -157,3 +157,27 @@ MENU = """
 6. List registrations
 7. Exit
 """
+
+def main():
+    init_files()
+    while True:
+        print(MENU)
+        choice = input("Choose an option (1-7): ").strip()
+
+        if choice == "1":
+            add_user()
+        elif choice == "2":
+            list_users()
+        elif choice == "3":
+            add_game()
+        elif choice == "4":
+            list_games()
+        elif choice == "5":
+            register_user_to_game()
+        elif choice == "6":
+            list_registrations()
+        elif choice == "7":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice, please try again.\n")
