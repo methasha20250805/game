@@ -136,3 +136,13 @@ def list_registrations():
     if not regs:
         print("No registrations yet.\n")
         return
+
+    users = {u["user_id"]: u["name"] for u in read_rows(USERS_FILE)}
+    games = {g["game_id"]: g["name"] for g in read_rows(GAMES_FILE)}
+
+    print("\n--- Registrations ---")
+    for r in regs:
+        uname = users.get(r["user_id"], "Unknown user")
+        gname = games.get(r["game_id"], "Unknown game")
+        print(f"Reg ID: {r['reg_id']} | User: {uname} | Game: {gname} | When: {r['timestamp']}")
+    print()
