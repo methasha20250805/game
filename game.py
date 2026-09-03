@@ -146,3 +146,14 @@ def list_registrations():
         gname = games.get(r["game_id"], "Unknown game")
         print(f"Reg ID: {r['reg_id']} | User: {uname} | Game: {gname} | When: {r['timestamp']}")
     print()
+
+MENU = """
+==== Game Registration System ====
+1. Add user
+2. List users
+3. Add game
+4. List games
+5. Register a user to a game
+6. List registrations
+7. Exit
+"""
