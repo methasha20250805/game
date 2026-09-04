@@ -51,6 +51,10 @@ def next_id(filename, id_field):
         return 1
     return max(int(r[id_field]) for r in rows) + 1
 
+# ---------------------------------------------------------------------------
+# Setup
+# ---------------------------------------------------------------------------
+
 USER_HEADERS = ["user_id", "name", "email"]
 GAME_HEADERS = ["game_id", "name", "genre"]
 REG_HEADERS = ["reg_id", "user_id", "game_id", "timestamp"]
