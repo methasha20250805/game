@@ -96,6 +96,10 @@ def list_users():
         print(f"ID: {u['user_id']} | Name: {u['name']} | Email: {u['email']}")
     print()
 
+# ---------------------------------------------------------------------------
+# Game management
+# ---------------------------------------------------------------------------
+
 def add_game():
     name = input("Enter game name: ").strip()
     genre = input("Enter game genre: ").strip()
