@@ -22,6 +22,11 @@ USERS_FILE = "users.csv"
 GAMES_FILE = "games.csv"
 REGISTRATIONS_FILE = "registrations.csv"
 
+
+# ---------------------------------------------------------------------------
+# Generic CSV helpers
+# ---------------------------------------------------------------------------
+
 def ensure_file(filename, headers):
     """Create the CSV file with headers if it doesn't already exist."""
     if not os.path.exists(filename):
