@@ -127,6 +127,11 @@ def list_games():
         print(f"ID: {g['game_id']} | Name: {g['name']} | Genre: {g['genre']}")
     print()
 
+
+# ---------------------------------------------------------------------------
+# Registration management (user <-> game)
+# ---------------------------------------------------------------------------
+
 def register_user_to_game():
     users = read_rows(USERS_FILE)
     games = read_rows(GAMES_FILE)
