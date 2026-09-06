@@ -117,8 +117,6 @@ def list_games():
     print()
 
 # Registration management (user <-> game)
-# ---------------------------------------------------------------------------
-
 def register_user_to_game():
     users = read_rows(USERS_FILE)
     games = read_rows(GAMES_FILE)
