@@ -52,9 +52,7 @@ USER_HEADERS = ["user_id", "name", "email"]
 GAME_HEADERS = ["game_id", "name", "genre"]
 REG_HEADERS = ["reg_id", "user_id", "game_id", "timestamp"]
 
-# ---------------------------------------------------------------------------
 # User management
-# ---------------------------------------------------------------------------
 
 def init_files():
     ensure_file(USERS_FILE, USER_HEADERS)
