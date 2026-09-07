@@ -1,8 +1,6 @@
 
 """
-Game Registration System
-Manages Users, Games, and Registrations, all persisted to CSV files.
-Files created (in the same folder as this script):
+Game Registration System - Manages Users, Games, and Registrations, all persisted to CSV files.
     users.csv          -> user_id, name, email
     games.csv          -> game_id, name, genre
     registrations.csv  -> reg_id, user_id, game_id
