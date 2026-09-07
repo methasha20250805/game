@@ -65,7 +65,7 @@ def add_user():
 
     # Prevent duplicate emails
     users = read_rows(USERS_FILE)
-    if any(u["email"].lower() == email.lower() for u in users):
+    if any(u.get["email"].lower() == email.lower() for u in users):
         print("A user with this email already exists.\n")
         return
 
