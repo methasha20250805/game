@@ -84,7 +84,7 @@ def list_users():
     if not users:
         print("No users registered yet.\n")
         return
-    print("\n--- Users ---")
+    print("\n Users ")
     for u in users:
         print(f"ID: {u['user_id']} | Name: {u['name']} | Email: {u['email']}")
     print()
