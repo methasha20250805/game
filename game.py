@@ -173,7 +173,7 @@ def list_registrations():
     print()
 
 MENU = """
- Game Registration System
+=== Game Registration System ===
 1. Add user
 2. List users
 3. Add game
