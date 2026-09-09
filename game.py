@@ -18,7 +18,7 @@ REGISTRATIONS_FILE = "registrations.csv"
 
 # Generic CSV helpers
 def ensure_file(filename, headers):
-    """Create the CSV file with headers if it doesn't exist or is empty/misheadered."""
+
     needs_init = True
     if os.path.exists(filename):
         with open(filename, "r", newline="", encoding="utf-8") as f:
