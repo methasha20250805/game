@@ -2,7 +2,7 @@
 """
 Game Registration System - Manages Users, Games, and Registrations, all persisted to CSV files.
     users.csv          -> user_id, name, email
-    games.csv          -> game_id, name, genre
+
 
 """
 
